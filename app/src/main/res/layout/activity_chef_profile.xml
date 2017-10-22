@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_chef_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.homefood.ui.ChefProfileActivity">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="PROFILE"
+        android:textColor="#FFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/txtTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/add_image"
+                app:civ_border_color="@color/colorPrimary"
+                app:civ_border_width="2dp" />
+
+            <TextView
+                android:id="@+id/txtLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="Tell us more about you..."
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edtName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="12dp"
+                    android:layout_weight="1"
+                    android:hint="Name"
+                    android:inputType="textCapSentences"
+                    android:nextFocusDown="@+id/edtPhoneNumber"
+                    android:singleLine="true"
+                    app:met_errorColor="#ffff4444"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelText="NAME" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/edtPhoneNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:layout_weight="1"
+                    android:hint="Phone Number"
+                    android:inputType="phone"
+                    android:nextFocusDown="@+id/edtSpeciality"
+                    android:singleLine="true"
+                    app:met_errorColor="#ffff4444"
+                    app:met_floatingLabel="highlight"
+                    app:met_floatingLabelText="PHONE NUMBER" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cbServicesLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cbDinein"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Dine in" />
+
+                <CheckBox
+                    android:id="@+id/cbTakeout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Take out" />
+
+                <CheckBox
+                    android:id="@+id/cbDelivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Delivery " />
+
+            </LinearLayout>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edtLunchHours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Lunch Hours"
+                android:inputType="textCapSentences"
+                android:singleLine="true"
+                app:met_errorColor="#ffff4444"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="LUNCH HOURS" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edtHours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Dinner Hours"
+                android:inputType="textCapSentences"
+                android:nextFocusDown="@+id/edtFoodCulture"
+                android:singleLine="true"
+                app:met_errorColor="#ffff4444"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="DINNER HOURS" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="FOOD CULTURE"
+                android:textColor="#B9B9B9"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtFoodCulture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nextFocusDown="@+id/edtLunchMenu"
+                android:paddingBottom="8dp"
+                android:text="Tap to select..."
+                android:textColor="#333"
+                android:textSize="14sp" />
+
+            <RadioGroup
+                android:id="@+id/rgVegNonVeg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rdVeg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Veg" />
+
+                <RadioButton
+                    android:id="@+id/rdNonVeg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Non Veg" />
+
+                <RadioButton
+                    android:id="@+id/rdBoth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Both" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="LUNCH MENU"
+                android:textColor="#B9B9B9"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/edtLunchMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Tap to edit..."
+                android:textColor="#333"
+                android:textSize="14sp"
+                android:nextFocusDown="@+id/edtDinnerMenu" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="DINNER MENU"
+                android:textColor="#B9B9B9"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/edtDinnerMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Tap to edit..."
+                android:textColor="#333"
+                android:textSize="14sp"
+                android:nextFocusDown="@+id/edtSpecialMenu" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="SPECIAL MENU"
+                android:textColor="#B9B9B9"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/edtSpecialMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tap to edit..."
+                android:textColor="#333"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edtLunchDeadline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Lunch Deadline"
+                android:inputType="textCapSentences"
+                android:singleLine="true"
+                app:met_errorColor="#ffff4444"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="LUNCH DEADLINE" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edtDeadline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Dinner Deadline"
+                android:inputType="textCapSentences"
+                android:singleLine="true"
+                app:met_errorColor="#ffff4444"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="DINNER DEADLINE" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtPlace"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="top"
+                    android:text="No place selected"
+                    android:textColor="#333"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btnPickPlace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="Pick Place" />
+
+            </LinearLayout>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edtSpeciality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="Speciality"
+                android:inputType="textCapSentences"
+                android:singleLine="true"
+                app:met_errorColor="#ffff4444"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="SPECIALITY" />
+
+            <Switch
+                android:id="@+id/switchButtonDiscovery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:checked="true"
+                android:text="Discovery" />
+
+            <Button
+                android:id="@+id/btnUpdateProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="UPDATE" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>
